@@ -1,5 +1,7 @@
 extends MeshInstance3D
 
+@export var grid_size : float = 10
+@export var cell_size : int = 250
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	mesh=create_grid_mesh(100,10)
+	mesh=create_grid_mesh(grid_size,cell_size)
 
 func create_grid_mesh(grid_size: int, cell_size: float) -> Mesh:
 	var mesh = ImmediateMesh.new()

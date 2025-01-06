@@ -20,7 +20,7 @@ height = 6.61687
 [node name="BasicBomber" type="RigidBody3D"]
 script = ExtResource("1_4dkr0")
 ACCELERATION_TOP = 1.0
-ACCELERATION_DELTA = 5.0
+ACCELERATION_DELTA = 0.1
 FRICTION = 0.0
 TURN_SPEED = 2.0
 
