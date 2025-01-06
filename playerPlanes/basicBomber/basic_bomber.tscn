@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dbm6qrji64q7h"]
 
-[ext_resource type="Script" path="res://player/movement.gd" id="1_4dkr0"]
+[ext_resource type="Script" path="res://player/airplaneMovement.gd" id="1_4dkr0"]
 [ext_resource type="PackedScene" uid="uid://b0rxn7odd6ite" path="res://playerPlanes/basicBomber/bomber.blend" id="1_uco5t"]
 [ext_resource type="PackedScene" uid="uid://c0u1b5ykronlq" path="res://units/health_component.tscn" id="2_x6url"]
 [ext_resource type="Script" path="res://units/hitbox_component.gd" id="3_riuv1"]
@@ -17,17 +17,21 @@ height = 14.1137
 radius = 0.457409
 height = 6.61687
 
-[node name="BasicBomber" type="RigidBody3D"]
+[node name="BasicBomber" type="RigidBody3D" node_paths=PackedStringArray("hitbox")]
 script = ExtResource("1_4dkr0")
-ACCELERATION = 1
-friction = 1
+ACCELERATION_TOP = 100.0
+ACCELERATION_DELTA = 10.0
+FRICTION = 0.0
+TURN_SPEED = 3.0
+hitbox = NodePath("HitboxComponent")
 
 [node name="appearance" parent="." instance=ExtResource("1_uco5t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0450745)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -0.000312902)
 
 [node name="healthComponent" parent="." instance=ExtResource("2_x6url")]
 
 [node name="HitboxComponent" type="Area3D" parent="."]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
 script = ExtResource("3_riuv1")
 
 [node name="fuselageShape" type="CollisionShape3D" parent="HitboxComponent"]
@@ -41,6 +45,3 @@ shape = SubResource("CapsuleShape3D_0nmbh")
 [node name="wing2Shape" type="CollisionShape3D" parent="HitboxComponent"]
 transform = Transform3D(4.37114e-08, 1, 1.31134e-07, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1.31134e-07, 1, 1.31134e-07, 1.69407e-21, 5)
 shape = SubResource("CapsuleShape3D_k2yd4")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 200, 0)
