@@ -1,5 +1,6 @@
 extends RigidBody3D
 
+@export var SPEED_TOP : float = 100
 @export var ACCELERATION_TOP : float = 3
 @export var ACCELERATION_DELTA : float = 0.5
 @export var FRICTION : float = 30
@@ -28,20 +29,24 @@ func _physics_process(delta: float) -> void :
 
 	
 	var lookDirection : Vector3 = -transform.basis.z.normalized()
-	linear_velocity = lookDirection * acceleration
-	
+	var newVelocity : Vector3 = linear_velocity + lookDirection * acceleration
+	if newVelocity.length()>SPEED_TOP :
+		newVelocity = newVelocity.normalized()*SPEED_TOP
+		
+	linear_velocity = newVelocity
 	print("linear_velocity : ",linear_velocity)
 
 # Declare a reference to the Area3D hitbox
-@export var hitbox: Area3D
-@onready var hitbox_component: HitboxComponent = $HitboxComponent
+#@export var hitbox: Area3D
+#@onready var hitbox_component: HitboxComponent = $HitboxComponent
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Connect signals to detect when an object enters or exits the hitbox
-	hitbox_component.body_entered.connect(_on_body_entered)
-	hitbox_component.body_exited.connect(_on_body_exited)
+	#hitbox_component.body_entered.connect(_on_body_entered)
+	#hitbox_component.body_exited.connect(_on_body_exited)
 	gravity_scale = 0
+	#linear_damp = FRICTION
 
 # This function will be called when another body enters the hitbox
 func _on_body_entered(body: Node):

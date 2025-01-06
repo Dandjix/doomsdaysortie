@@ -17,13 +17,12 @@ height = 14.1137
 radius = 0.457409
 height = 6.61687
 
-[node name="BasicBomber" type="RigidBody3D" node_paths=PackedStringArray("hitbox")]
+[node name="BasicBomber" type="RigidBody3D"]
 script = ExtResource("1_4dkr0")
 ACCELERATION_TOP = 100.0
-ACCELERATION_DELTA = 10.0
-FRICTION = 0.0
+ACCELERATION_DELTA = 50.0
+FRICTION = 1000.0
 TURN_SPEED = 3.0
-hitbox = NodePath("HitboxComponent")
 
 [node name="appearance" parent="." instance=ExtResource("1_uco5t")]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, -0.000312902)
