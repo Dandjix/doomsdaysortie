@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://kg35i38lk6wy"]
+
+[ext_resource type="Script" path="res://worlds/world_grid.gd" id="1_ymwv7"]
+
+[sub_resource type="ImmediateMesh" id="ImmediateMesh_roujw"]
+
+[node name="WorldGrid" type="MeshInstance3D"]
+mesh = SubResource("ImmediateMesh_roujw")
+script = ExtResource("1_ymwv7")

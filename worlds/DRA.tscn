@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=4 uid="uid://dbub2tbfslatv"]
+[gd_scene load_steps=6 format=4 uid="uid://dbub2tbfslatv"]
 
 [ext_resource type="PackedScene" uid="uid://b362p2iuoovw8" path="res://worlds/terrain.tscn" id="2_kyc5c"]
 [ext_resource type="PackedScene" uid="uid://dbm6qrji64q7h" path="res://playerPlanes/basicBomber/basic_bomber.tscn" id="2_umfhu"]
 [ext_resource type="Script" path="res://input/playerCamera.gd" id="3_dmfx0"]
+[ext_resource type="PackedScene" uid="uid://kg35i38lk6wy" path="res://worlds/WorldGrid.tscn" id="4_oe5j6"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_65gu4"]
 _surfaces = [{
@@ -22,12 +23,14 @@ _surfaces = [{
 transform = Transform3D(1, 0, 0, 0, 0.362519, 0.931976, 0, -0.931976, 0.362519, 0, 1.3506, 0)
 
 [node name="BasicBomber" parent="." instance=ExtResource("2_umfhu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35165, 0, -0.956321)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.352, 76, -0.956)
 
 [node name="Terrain" parent="." instance=ExtResource("2_kyc5c")]
 transform = Transform3D(0.999919, 0, 0, 0, -4.37086e-08, -0.999915, 0, 0.999937, -4.37077e-08, 0, 0, -16)
 mesh = SubResource("ArrayMesh_65gu4")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 20, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 96, 0)
 script = ExtResource("3_dmfx0")
+
+[node name="WorldGrid" parent="." instance=ExtResource("4_oe5j6")]
