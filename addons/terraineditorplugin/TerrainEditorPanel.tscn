@@ -1,0 +1,26 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfcgcyitrlqfh"]
+
+[ext_resource type="Script" path="res://addons/terraineditorplugin/terrain_editor_panel.gd" id="1_gf7ie"]
+
+[node name="TerrainEditorPanel" type="VBoxContainer"]
+script = ExtResource("1_gf7ie")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+text = "Terrain editor"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Destroy" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Destroy"
+
+[node name="Create" type="Button" parent="Buttons"]
+layout_mode = 2
+text = "Create
+"
+
+[connection signal="pressed" from="Buttons/Destroy" to="." method="_on_destroy_pressed"]
+[connection signal="pressed" from="Buttons/Create" to="." method="_on_create_pressed"]

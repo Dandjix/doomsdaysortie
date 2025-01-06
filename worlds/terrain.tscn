@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=4 uid="uid://b362p2iuoovw8"]
+
+[ext_resource type="Script" path="res://worlds/terrain.gd" id="1_du2du"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_k5tbn"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1, 1, 1e-05),
+"format": 34359742471,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAAACAAMA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("AAAAAAAAAAAAAAAAAACAPwAAAAAAAAAAAACAPwAAgD8AAAAAAAAAAAAAgD8AAAAA//////9/AID//////38AgP//////fwCA//////9/AIA=")
+}]
+
+[node name="Terrain" type="MeshInstance3D"]
+transform = Transform3D(0.999919, 0, 0, 0, -4.37086e-08, -0.999915, 0, 0.999937, -4.37077e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_k5tbn")
+script = ExtResource("1_du2du")
+
+[node name="Node3D" type="Node3D" parent="."]
