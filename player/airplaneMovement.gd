@@ -34,7 +34,7 @@ func _physics_process(delta: float) -> void :
 		newVelocity = newVelocity.normalized()*SPEED_TOP
 		
 	linear_velocity = newVelocity
-	print("linear_velocity : ",linear_velocity)
+	#print("linear_velocity : ",linear_velocity)
 
 # Declare a reference to the Area3D hitbox
 #@export var hitbox: Area3D

@@ -1,7 +1,7 @@
 extends MeshInstance3D
 
-@export var grid_size : float = 10
-@export var cell_size : int = 250
+@export var grid_size : int = 2
+@export var cell_size : float = 250
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

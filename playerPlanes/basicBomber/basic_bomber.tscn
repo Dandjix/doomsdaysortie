@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dbm6qrji64q7h"]
+[gd_scene load_steps=9 format=3 uid="uid://dbm6qrji64q7h"]
 
 [ext_resource type="Script" path="res://player/airplaneMovement.gd" id="1_4dkr0"]
 [ext_resource type="PackedScene" uid="uid://b0rxn7odd6ite" path="res://playerPlanes/basicBomber/bomber.blend" id="1_uco5t"]
 [ext_resource type="PackedScene" uid="uid://c0u1b5ykronlq" path="res://units/health_component.tscn" id="2_x6url"]
 [ext_resource type="Script" path="res://units/hitbox_component.gd" id="3_riuv1"]
+[ext_resource type="PackedScene" uid="uid://bk0fwlw6bpcgm" path="res://worlds/worldShift/world_shift_player.tscn" id="5_3kx3d"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mvup1"]
 radius = 1.2923
@@ -44,3 +45,5 @@ shape = SubResource("CapsuleShape3D_0nmbh")
 [node name="wing2Shape" type="CollisionShape3D" parent="HitboxComponent"]
 transform = Transform3D(4.37114e-08, 1, 1.31134e-07, -1, 4.37114e-08, -4.37114e-08, -4.37114e-08, -1.31134e-07, 1, 1.31134e-07, 1.69407e-21, 5)
 shape = SubResource("CapsuleShape3D_k2yd4")
+
+[node name="worldShiftAgent" parent="." instance=ExtResource("5_3kx3d")]

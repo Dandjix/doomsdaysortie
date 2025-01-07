@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ch1fg3q3l4d3d"]
+
+[ext_resource type="Script" path="res://worlds/worldShift/worldShiftAgent.gd" id="1_ed57n"]
+
+[node name="worldShiftAgent" type="Node3D"]
+script = ExtResource("1_ed57n")
