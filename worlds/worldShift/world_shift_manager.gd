@@ -14,7 +14,7 @@ func _removeAgent(agent : WorldShiftAgent) -> void:
 	_agents.erase(agent)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if _player == null:
 		return
 	var player_pos = _player.global_position

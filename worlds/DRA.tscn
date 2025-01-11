@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://dbub2tbfslatv"]
+[gd_scene load_steps=8 format=4 uid="uid://dbub2tbfslatv"]
 
 [ext_resource type="PackedScene" uid="uid://b362p2iuoovw8" path="res://worlds/terrain.tscn" id="2_kyc5c"]
 [ext_resource type="PackedScene" uid="uid://dbm6qrji64q7h" path="res://playerPlanes/basicBomber/basic_bomber.tscn" id="2_umfhu"]
 [ext_resource type="Script" path="res://input/playerCamera.gd" id="3_dmfx0"]
 [ext_resource type="PackedScene" uid="uid://kg35i38lk6wy" path="res://worlds/WorldGrid.tscn" id="4_oe5j6"]
+[ext_resource type="PackedScene" uid="uid://g4l1flk8gfkl" path="res://playerPlanes/basicFighter/fighter.blend" id="5_u45ei"]
+[ext_resource type="Script" path="res://worlds/worldShift/worldShiftAgent.gd" id="6_qnuir"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_65gu4"]
 _surfaces = [{
@@ -34,4 +36,9 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 96,
 script = ExtResource("3_dmfx0")
 
 [node name="WorldGrid" parent="." instance=ExtResource("4_oe5j6")]
-grid_size = 16
+grid_size = 8
+
+[node name="fighter" parent="." instance=ExtResource("5_u45ei")]
+
+[node name="Node3D" type="Node3D" parent="fighter"]
+script = ExtResource("6_qnuir")
